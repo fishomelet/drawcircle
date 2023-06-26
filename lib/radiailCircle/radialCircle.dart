@@ -31,7 +31,10 @@ class _RadialCircleState extends State<RadialCircle> {
         ),
         Center(
             child: CustomPaint(
-                painter: radialPainter(radius: 130, activityTime: activity))),
+                painter: radialPainter(
+                    radius: 130,
+                    activityTime: activity,
+                    rcolor: Colors.orange))),
         Center(
             child: CustomPaint(
                 painter: radialPainter(radius: 100, activityTime: activity))),

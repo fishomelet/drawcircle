@@ -5,12 +5,14 @@ import 'package:flutter/material.dart';
 class radialPainter extends CustomPainter {
   double radius;
   var activityTime;
+  Color rcolor;
 
   radialPainter(
       {this.radius = 130,
       this.activityTime = const [
         [0, 0, 0]
-      ]});
+      ],
+      this.rcolor = const Color.fromRGBO(3, 212, 190, 1.0)});
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -27,7 +29,7 @@ class radialPainter extends CustomPainter {
       ..strokeWidth = 15;
 
     var paint = Paint()
-      ..color = Color.fromRGBO(3, 212, 190, 1.0)
+      ..color = rcolor
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke
       ..strokeWidth = 15;
