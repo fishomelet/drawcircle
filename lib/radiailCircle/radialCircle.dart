@@ -12,10 +12,11 @@ class RadialCircle extends StatefulWidget {
 class _RadialCircleState extends State<RadialCircle> {
   var activity = [
     // hour, minute, duration
-    [23, 0, 120],
+    [23, 0, 100],
     [5, 30, 60],
     [13, 10, 30],
     [14, 20, 30],
+    [1, 30, 60],
   ];
 
   @override
