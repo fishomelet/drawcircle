@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dailPainter.dart';
 import 'radialPainter.dart';
+import '../dbHelper.dart';
 
 class RadialCircle extends StatefulWidget {
   const RadialCircle({super.key});
@@ -24,7 +25,10 @@ class _RadialCircleState extends State<RadialCircle> {
     return Scaffold(
       body: Stack(children: [
         Center(
-          child: Container(
+          child: Text('hello'),
+        ),
+        Center(
+          child: SizedBox(
             width: 300,
             height: 300,
             child: CustomPaint(painter: dailPainter()),

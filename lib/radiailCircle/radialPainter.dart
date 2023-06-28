@@ -19,8 +19,8 @@ class radialPainter extends CustomPainter {
     // TODO: implement paint
     //double radius = 130;
     final rect = Rect.fromLTRB(-radius, -radius, radius, radius);
-    final startAngle = 0.0;
-    final sweepAngle = 2 * math.pi;
+    const startAngle = 0.0;
+    const sweepAngle = 2 * math.pi;
     var useCenter = false;
 
     var basepaint = Paint()

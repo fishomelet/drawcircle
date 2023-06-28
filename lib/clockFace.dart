@@ -14,7 +14,7 @@ class ClockFace extends StatefulWidget {
 class _ClockFaceState extends State<ClockFace> {
   @override
   void initState() {
-    Timer.periodic(Duration(seconds: 1), (timer) {
+    Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {});
     });
     super.initState();
@@ -32,7 +32,7 @@ class _ClockFaceState extends State<ClockFace> {
                   angle: -math.pi / 2,
                   child: CustomPaint(painter: ClockPainter()))),
           Center(
-            child: Container(
+            child: SizedBox(
                 width: 290,
                 height: 290,
                 child: CustomPaint(
@@ -51,10 +51,10 @@ class ClockPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     var center = Offset(size.width / 2, size.height / 2);
-    final rect = Rect.fromLTRB(-150, -150, 150, 150);
-    final startAngle = 0.0;
-    final sweepAngle = 2 * math.pi;
-    final useCenter = false;
+    const rect = Rect.fromLTRB(-150, -150, 150, 150);
+    const startAngle = 0.0;
+    const sweepAngle = 2 * math.pi;
+    const useCenter = false;
     final paint = Paint()
       ..color = Colors.black
       ..style = PaintingStyle.stroke
