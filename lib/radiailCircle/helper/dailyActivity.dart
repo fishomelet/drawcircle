@@ -2,7 +2,7 @@ class DailyActivity {
   final String area;
   final String date;
   final String time;
-  final int activityMinutes;
+  final num activityMinutes;
 
   const DailyActivity({
     required this.area,
