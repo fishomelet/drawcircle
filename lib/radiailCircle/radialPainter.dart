@@ -1,18 +1,29 @@
 import 'dart:math' as math;
 
+import 'package:drawcircle/radiailCircle/helper/dailyActivity.dart';
 import 'package:flutter/material.dart';
 
 class radialPainter extends CustomPainter {
   double radius;
-  var activityTime;
+  String area;
+  List<DailyActivity> activityList;
+  var timeList = [];
   Color rcolor;
 
   radialPainter(
-      {this.radius = 130,
-      this.activityTime = const [
-        [0, 0, 0]
-      ],
+      {required this.radius,
+      required this.area,
+      required this.activityList,
       this.rcolor = const Color.fromRGBO(3, 212, 190, 1.0)});
+
+  void getTimeList() {
+    final list =
+        activityList.where((activity) => activity.area == area).toList();
+    //list.length
+    list.forEach((element) {
+      timeList.add(element.getTime());
+    });
+  }
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -23,20 +34,21 @@ class radialPainter extends CustomPainter {
     const sweepAngle = 2 * math.pi;
     var useCenter = false;
 
+    getTimeList();
+
     var basepaint = Paint()
-      ..color = Colors.grey.shade300
+      ..color = Colors.grey.shade200
       ..style = PaintingStyle.stroke
       ..strokeWidth = 15;
 
     var paint = Paint()
       ..color = rcolor
-      ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke
       ..strokeWidth = 15;
 
     canvas.drawArc(rect, startAngle, sweepAngle, useCenter, basepaint);
 
-    for (List<int> i in activityTime) {
+    for (var i in timeList) {
       //start from 24 by rotate -90 degree + hour + minutes
       var startAngle2 =
           -math.pi / 2 + i[0] / 12 * math.pi + i[1] / 60 / 12 * math.pi;

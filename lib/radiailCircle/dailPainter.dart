@@ -43,7 +43,7 @@ class dailPainter extends CustomPainter {
       tickMarkLength = i % 5 == 0 ? hourTickMarkLength : minuteTickMarkLength;
       tickPaint.strokeWidth =
           i % 5 == 0 ? hourTickMarkWidth : minuteTickMarkWidth;
-      tickPaint.color = i % 5 == 0 ? Colors.red : Colors.blueGrey;
+      // tickPaint.color = i % 5 == 0 ? Colors.red : Colors.blueGrey;
       canvas.drawLine(Offset(0.0, -radius),
           Offset(0.0, -radius + tickMarkLength), tickPaint);
 
